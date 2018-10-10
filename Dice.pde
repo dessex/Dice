@@ -1,40 +1,21 @@
-Die[] bob;
-Die[] sue;
-Die[] ron;
+
 void setup()
 
 {
   size (1000, 1000);
   noLoop();
-  bob= new Die [10];
-  for (int i=0; i<10; i++) {
-    bob[i]=new Die((i*100), i*100);
-  }
-  sue=new Die [10];
-  for (int u=0; u<10; u++) {
-    sue[u]=new Die(100+ (u*100), u*100);
-  }
-  ron=new Die [10];
-  for (int x=0; x<10; x++) {
-    ron[x]=new Die(-100+(x*100), (x*100));
-  }
+  
 }
 
 
 void draw()
 {
   background(0);
-  for (int i=0; i<10; i++) {
-    bob[i].show();
-    bob[i].roll();
-  }
-  for (int u=0; u<10; u++) {
-    sue[u].show();
-    sue[u].roll();
-  }
-  for (int x=0; x<10; x++) {
-    ron[x].show();
-    ron[x].roll();
+  for (int v=0; v<10; v++) {
+    for (int w=0; w<10; w++){
+    Die bob = new Die(v*100,w*100);
+    bob.show();
+    }
   }
 }
 
