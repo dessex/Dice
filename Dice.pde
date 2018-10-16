@@ -1,4 +1,4 @@
-
+int count;
 void setup()
 
 {
@@ -16,6 +16,8 @@ void draw()
     Die bob = new Die(v*100,w*100);
     bob.show();
     }
+    textSize(50);
+    text("The total dots is " + count, 500,700);
   }
 }
 
@@ -23,6 +25,7 @@ void draw()
 void mousePressed()
 {
   redraw();
+  count = 0;
 }
 
 class Die //models one single dice cube
@@ -54,6 +57,7 @@ class Die //models one single dice cube
       rect(myX, myY, 100, 100);
       fill(3, 3, 3);
       ellipse(myX+50, myY+50, 10, 10);
+      count = count+1;
     }
 
     if (Num==2) {
@@ -62,6 +66,7 @@ class Die //models one single dice cube
       fill(3, 3, 3);
       ellipse(myX+35, myY+35, 10, 10);
       ellipse(myX+65, myY+65, 10, 10);
+      count = count + 2;
     }
     if (Num==3) {
       fill((int)(Math.random()*255)+1, 255, (int)(Math.random()*255)+1);
@@ -70,6 +75,7 @@ class Die //models one single dice cube
       ellipse(myX+30, myY+30, 10, 10);
       ellipse(myX+50, myY+50, 10, 10);
       ellipse(myX+70, myY+70, 10, 10);
+      count = count + 3;
     }
     if (Num==4) {
       fill((int)(Math.random()*255)+1, 255, (int)(Math.random()*255)+1);
@@ -79,6 +85,7 @@ class Die //models one single dice cube
       ellipse(myX+25, myY+75, 10, 10);
       ellipse(myX+75, myY+25, 10, 10);
       ellipse(myX+75, myY+75, 10, 10);
+      count = count + 4;
     }
     if (Num==5) {
       fill((int)(Math.random()*255)+1, (int)(Math.random()*255)+1, 255);
@@ -89,6 +96,7 @@ class Die //models one single dice cube
       ellipse(myX+75, myY+25, 10, 10);
       ellipse(myX+75, myY+75, 10, 10);
       ellipse(myX+50, myY+50, 10, 10);
+      count = count + 5;
     }
     if (Num==6) {
       fill((int)(Math.random()*255)+1, (int)(Math.random()*255)+1, 255);
@@ -100,6 +108,7 @@ class Die //models one single dice cube
       ellipse(myX+70, myY+50, 10, 10);
       ellipse(myX+30, myY+70, 10, 10);
       ellipse(myX+70, myY+70, 10, 10);
+      count = count + 6;
     }
   }
 }
